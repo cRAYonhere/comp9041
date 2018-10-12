@@ -1,0 +1,158 @@
+==>rm -rf .legit
+==>ls -al
+total 16
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159   27 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh
+===========CASE 0===========
+==>/home/cs2041/bin/legit init init
+usage: legit.pl init
+==>rm -rf .legit
+===========CASE 1===========
+==>/home/cs2041/bin/legit
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 2===========
+==>/home/cs2041/bin/legit -init
+legit.pl: error: unknown command -init 
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 3===========
+==>/home/cs2041/bin/legit "init"
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 4===========
+==>/home/cs2041/bin/legit init*
+legit.pl: error: unknown command init* 
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 5===========
+==>/home/cs2041/bin/legit -init
+legit.pl: error: unknown command -init 
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 6===========
+==>/home/cs2041/bin/legit int
+legit.pl: error: unknown command int 
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 7===========
+==>/home/cs2041/bin/legit initt
+legit.pl: error: unknown command initt 
+Usage: legit.pl <command> [<args>]
+
+These are the legit commands:
+   init       Create an empty legit repository
+   add        Add file contents to the index
+   commit     Record changes to the repository
+   log        Show commit log
+   show       Show file at particular state
+   rm         Remove files from the current directory and from the index
+   status     Show the status of files in the current directory, index, and repository
+   branch     list, create or delete a branch
+   checkout   Switch branches or restore current directory files
+   merge      Join two development histories together
+
+==>rm -rf .legit
+===========CASE 8===========
+==>/home/cs2041/bin/legit ini\t
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 9===========
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+==>/home/cs2041/bin/legit init
+legit.pl: error: .legit already exists
+==>rm -rf .legit
+===========CASE 10===========
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+===========CASE 11===========
+==>/home/cs2041/bin/legit init binit
+usage: legit.pl init
+==>rm -rf .legit
+===========CASE 12===========
+==>echo "Test 1234" > testfile
+ls -al
+total 24
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159 5382 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh
+-rw-r----- 1 z5181159 z5181159   10 Sep 21 22:12 testfile
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+==>rm -f testfile
+==>House Cleaning
+total 20
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159 5815 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh

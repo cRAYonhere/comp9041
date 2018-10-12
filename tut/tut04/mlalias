@@ -1,0 +1,12 @@
+        alias: COMP2041-list
+  description: Udb alias list
+    addresses:
+               z5000000
+               z5000001
+               .......
+               z5555555
+               andrewt
+       owners: udb, cs2041
+authorised posters: @Employee, @Subject_Utility, @Wheel
+    Moderator: udb
+       Status: system, closed, moderated, virtual, and public

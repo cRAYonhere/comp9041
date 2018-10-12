@@ -1,0 +1,69 @@
+==>rm -rf .legit
+==>ls -al
+total 24
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159   27 Sep 21 22:12 spec_stdout_0_init
+-rw-r----- 1 z5181159 z5181159 6061 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh
+===========CASE 0===========
+==>/home/cs2041/bin/legit init init
+==>rm -rf .legit
+===========CASE 1===========
+==>/home/cs2041/bin/legit
+==>rm -rf .legit
+===========CASE 2===========
+==>/home/cs2041/bin/legit -init
+==>rm -rf .legit
+===========CASE 3===========
+==>/home/cs2041/bin/legit "init"
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 4===========
+==>/home/cs2041/bin/legit init*
+==>rm -rf .legit
+===========CASE 5===========
+==>/home/cs2041/bin/legit -init
+==>rm -rf .legit
+===========CASE 6===========
+==>/home/cs2041/bin/legit int
+==>rm -rf .legit
+===========CASE 7===========
+==>/home/cs2041/bin/legit initt
+==>rm -rf .legit
+===========CASE 8===========
+==>/home/cs2041/bin/legit ini\t
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 9===========
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+==>/home/cs2041/bin/legit init
+==>rm -rf .legit
+===========CASE 10===========
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+===========CASE 11===========
+==>/home/cs2041/bin/legit init binit
+==>rm -rf .legit
+===========CASE 12===========
+==>echo "Test 1234" > testfile
+ls -al
+total 28
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159 1541 Sep 21 22:12 spec_stdout_0_init
+-rw-r----- 1 z5181159 z5181159 6061 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh
+-rw-r----- 1 z5181159 z5181159   10 Sep 21 22:12 testfile
+==>/home/cs2041/bin/legit init
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+==>rm -f testfile
+==>House Cleaning
+total 24
+drwxr-x--- 2 z5181159 z5181159 4096 Sep 21 22:12 .
+drwxr-x--- 5 z5181159 z5181159 4096 Sep 21 17:49 ..
+-rw-r----- 1 z5181159 z5181159 2042 Sep 21 22:12 spec_stdout_0_init
+-rw-r----- 1 z5181159 z5181159 6061 Sep 21 22:12 spec_stdout_stderr_0_init
+-rwxr-x--- 1 z5181159 z5181159 2156 Sep 21 22:05 test00.sh

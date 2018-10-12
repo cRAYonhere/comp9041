@@ -1,0 +1,18 @@
+Perl
+aaaaPerlaaaaa
+aaperlaaaa
+aaaaaPerl
+Perlaaaaa.s\
+Pl
+Peerrl
+Pee+rrl
+Full-stop.
+Fulmtopp
+Fulrtop
+Full-stopp
+Fulllllto
+1234
+[1-9][0-9][0-9][0-9]
+223,3345,231
+I (love|hate) programming in (Perl|Python) and (Java|C)
+I hate programming in Perl and Java

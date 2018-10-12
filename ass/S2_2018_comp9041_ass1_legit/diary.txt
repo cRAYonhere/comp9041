@@ -1,0 +1,15 @@
+Date		Start		Stop		Activity	Comments
+21/09/18	18:00:00	20:00:00	Planning	Setting up environment 
+21/09/18	20:00:00	23:00:00	test_cases	Subset0	init add	
+22/09/18	10:30:00	11:50:00	coding		Subset0	add, debugging
+22/09/18	12:10:00	12:40:00	test_cases	Subset0	commit
+22/09/18	13:40:00	23:30:00	coding		Subset1	commit -a -m 
+23/09/18	12:00:00	21:45:00	coding		Subset0	show, debugging commit and show
+26/09/18	19:20:00	00:00:00	test_cases	Subset0	debug commit show
+27/09/18	10:00:00	10:40:00	debugging	commit -a debug incomplete
+27/09/18	10:40:00	14:20:00	debugging	clean code and improve testcases
+27/09/18	14:25:00	16:45:00	test_cases	Subset1		commit -a -m
+27/09/18	17:00:00	22:30:00	coding		Subset1		commit -rm
+28/09/18	11:13:00	21:12:00	debugging	commit -rm debugging
+28/09/18	21:12:00	22:30:00	test_cases		status
+04/10/18	03:00:00	05:00:00	final testing	code cleaning

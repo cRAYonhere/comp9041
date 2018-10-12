@@ -1,0 +1,10 @@
+No repetition or omissions found. All values within paramenter.
+2 on position 2 has raw entropy 117
+Raw entropy out of range.
+8 on position 8 has raw entropy 87\n
+Raw entropy out of range.
+5 on position 2 has raw entropy 101\n
+Raw entropy out of range.
+2 on position 5 has raw entropy 87\n
+Raw entropy out of range.
+Exit Status: 1

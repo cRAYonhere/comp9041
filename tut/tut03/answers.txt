@@ -1,0 +1,27 @@
+1.	i.	file is not executable
+	ii.	incorrect premissions
+	iii.	incorrect command
+2.		seq.sh
+3.		no_blinking.sh
+4. 		list_include_files.sh
+5.		cat staff.txt | sed -r "s/([A-Z]) ([A-Z]) /\1.\2 /" | sort -k 2
+6.	a.	head -3 q3.txt
+	b. 	egrep "^(cs|se|bi|en)[[:digit:]]+" q3.txt
+	c.	cut -d ":" -f 5,7 q3.txt | egrep "/bin/bash$"
+	d.	cut -d ":" -f 1,2 q3.txt | sed "s/:/\t/g" > q3d_output.txt
+cat.	a.	i. 	Doens't have any of the flag options
+		ii.	Input needs to be piped in 
+	b.	q4.sh
+gzip.		zshow
+Marks.		sort -n students.txt |join -j 1 - marks.txt | sort -k 2 | cut -d " " -f 4,2,3 | awk '{print $3 " " $1 " " $2}'
+		grades.sh
+		time_date.sh
+		file_size.sh
+output|	a.	2	b.	
+	b.	
+
+
+Marks:
+Sanitize input
+https://stackoverflow.com/questions/89609/in-a-bash-script-how-do-i-sanitize-user-input
+

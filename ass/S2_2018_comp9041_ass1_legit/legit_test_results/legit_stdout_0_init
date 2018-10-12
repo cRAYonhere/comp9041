@@ -1,0 +1,69 @@
+==>rm -rf .legit
+==>ls -al
+total 24
+drwxrwxr-x 2 amrut amrut 4096 Sep 21 22:26 .
+drwxrwxr-x 4 amrut amrut 4096 Sep 21 22:26 ..
+-rw-rw-r-- 1 amrut amrut   27 Sep 21 22:26 legit_stdout_0_init
+-rw-rw-r-- 1 amrut amrut 7024 Sep 21 22:26 legit_stdout_stderr_0_init
+-rwxrwxr-x 1 amrut amrut 3416 Sep 21 22:26 test00.sh
+===========CASE 0===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init init
+==>rm -rf .legit
+===========CASE 1===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl
+==>rm -rf .legit
+===========CASE 2===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl -init
+==>rm -rf .legit
+===========CASE 3===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl "init"
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 4===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init*
+==>rm -rf .legit
+===========CASE 5===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl -init
+==>rm -rf .legit
+===========CASE 6===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl int
+==>rm -rf .legit
+===========CASE 7===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl initt
+==>rm -rf .legit
+===========CASE 8===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl ini	
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+===========CASE 9===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init
+Initialized empty legit repository in .legit
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init
+==>rm -rf .legit
+===========CASE 10===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init
+Initialized empty legit repository in .legit
+===========CASE 11===========
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init binit
+==>rm -rf .legit
+===========CASE 12===========
+==>echo "Test 1234" > testfile
+ls -al
+total 28
+drwxrwxr-x 2 amrut amrut 4096 Sep 21 22:26 .
+drwxrwxr-x 4 amrut amrut 4096 Sep 21 22:26 ..
+-rw-rw-r-- 1 amrut amrut 2097 Sep 21 22:26 legit_stdout_0_init
+-rw-rw-r-- 1 amrut amrut 7024 Sep 21 22:26 legit_stdout_stderr_0_init
+-rwxrwxr-x 1 amrut amrut 3416 Sep 21 22:26 test00.sh
+-rw-rw-r-- 1 amrut amrut   10 Sep 21 22:26 testfile
+==>~/Desktop/2018_S2/COMP9041/ass/S2_2018_comp9041_ass1_legit/legit.pl init
+Initialized empty legit repository in .legit
+==>rm -rf .legit
+==>rm -f testfile
+==>House Cleaning
+total 24
+drwxrwxr-x 2 amrut amrut 4096 Sep 21 22:26 .
+drwxrwxr-x 4 amrut amrut 4096 Sep 21 22:26 ..
+-rw-rw-r-- 1 amrut amrut 2609 Sep 21 22:26 legit_stdout_0_init
+-rw-rw-r-- 1 amrut amrut 7024 Sep 21 22:26 legit_stdout_stderr_0_init
+-rwxrwxr-x 1 amrut amrut 3416 Sep 21 22:26 test00.sh

@@ -1,0 +1,31 @@
+#!/usr/bin/perl -w
+
+use strict;
+my $pgrd_url="http://legacy.handbook.unsw.edu.au/vbook2018/brCoursesByAtoZ.jsp?StudyLevel=Postgraduate&descr=All";
+my $ugrd_url="http://legacy.handbook.unsw.edu.au/vbook2018/brCoursesByAtoZ.jsp?StudyLevel=Undergraduate&descr=All";
+
+open FILE1, "-|", "wget -q -O- $pgrd_url";
+open FILE2, "-|", "wget -q -O- $ugrd_url";
+
+our @pgrd_courses;
+our @ugrd_courses;
+
+#pgrd file handle
+while(my $line = <FILE1>){
+	if($line =~ /\>([A-Z]{4}[0-9]{4})\</){
+		#print "$1\n";
+		push @pgrd_courses, $1;
+	}
+}
+
+#ugrd file handle
+while(my $line = <FILE2>){
+	if($line =~ /\>([A-Z]{4}[0-9]{4})\</){
+		#print "$1\n";
+		push @ugrd_courses, $1;
+	}
+}
+http://legacy.handbook.unsw.edu.au/postgraduate/courses/2018/ACCT5906.html
+#foreach $course (@ARGV){
+
+#}

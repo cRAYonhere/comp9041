@@ -1,0 +1,10 @@
+No repetition or omissions found. All values within paramenter.
+4 on position 4 has raw entropy 78
+Everything looks good.
+2 on position 2 has raw entropy 99\n
+Everything looks good.
+3 on position 9 has raw entropy 123\n
+Everything looks good.
+9 on position 3 has raw entropy 110\n
+Everything looks good.
+Exit Status: 0

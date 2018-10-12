@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ $# -gt 0 ] ;then
+	for filename in "$@" ;
+	do
+		echo "===== $filename ====="
+		if [ ! -f $filename ]; then
+    			echo "No such file: $filename"
+		else
+			file="$filename"	
+			zcat $filename > temp
+			file="temp"
+			while IFS= read -r line
+			do
+				echo $line 
+			done < "$file"	
+			mv temp ~/.local/share/Trash
+		fi
+	done
+fi
+		
+	
+

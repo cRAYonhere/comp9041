@@ -1,0 +1,11 @@
+const isMale = (person) => { person.gender === 'male' }
+//conset startsWith = (letter) => (person) => person.name.startsWith(letter);
+const sum = (total, current) => total + current;
+
+const ageOfMaleNamesStartingWithA = users.filter(isMale)
+                                          .filter(startsWith('A'))
+                                          .map(({ age }) => age);
+console.log(ageOFMaleNamesStartingWithA);
+const average_ages = ageOFMaleNamesStartingWithA.reduce(sum, 0)/ageOFMaleNamesStartingWithA.length;
+
+console.log(average_ages);

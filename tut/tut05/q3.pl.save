@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+my $arg_count = $#ARGV + 1;
+$_=$ARGV[0];
+shift @ARGV;
+if( $arg_count > 0 ) {
+	if ( m/-[0-9]+/ ) {
+		$_ =~ s/-//g;
+		my $counter=$_;
+		print $counter,"\n";
+		while(while (<>) {
+    print $_; # or simply "print;"
+}){ 
+		}
+	} else {
+		die;
+	}
+} else {
+	print "I will print 10 lines from STDIN \n";
+}

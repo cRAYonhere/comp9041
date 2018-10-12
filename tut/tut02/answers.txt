@@ -1,0 +1,42 @@
+Resource:
+	https://www.regular-expressions.info/examples.html
+
+Q05. a. egrep "^#.+" <filename>  ("^ *")
+Q05. b. egrep -v "#.+" <filename>
+Q05. c. egrep ".+ $" <filename>
+Tutor	grep ";$"
+Q05. d. egrep -o "[BHLP]arry" <filename>
+Q05. e. egrep "hello.+world.+" <filename> 
+Tutor	egrep "hello +world" <filename>
+Q05. f. egrep "c[a|e]l[a|e]nd[a|e]r" <filename>
+Q05. f. egrep "c[a|e]lend[a|e]r|cal[a|e]ndar" <filename>
+Tutor	egrep "c[ae]l[ae]nd[ae]r"
+Q05. g. egrep "^([[:digit:]]+)(,[[:space:]]*[[:digit:]]+)*$" <filename>
+		https://stackoverflow.com/questions/1396084/regex-for-comma-delimited-list
+Q05. h. egrep "^\".*[\][n]\"$" <filename>
+Q06.	egrep "<p>|<br>" <filename>
+	1. Special meaning of pipe for shell due to no quotes
+	2  and 3. Left and right angel brackets have special meaning
+	4. egrep has the OR (pipe sysmbol) functionality
+	5. "Exercise for reader"
+Q07.	easy peasy lemon squeezy
+Q08.	egrep "^([[:digit:]]+|[[:space:]]*)[[:digit:]]*\.([[:digit:]]+|[[:space:]]*)$" <filename>
+Q10.	egrep "129\.94\.172\.([1-9]|[1][0-9]|[2][0-5])" <filename> 
+Tutor	egrep "129\.94\.172\.[12]*[0-9]*"
+Q11. b. cut -d ":" -f 2 <filename>
+Q11. b. grep "^[[:digit:]][[:digit:]]*[.]*[[:digit:]]*" <filename> 
+Q11. c. cut -d "|" -f 2 <filename>
+Q11. d. 
+Q12. a. sort -gk 1 <filename>
+        sort -gk 2 <filename>
+        sort -grk 2 <filename>
+Q12. b. egrep ".+FL$" <filename>
+	egrep ".......[[:space:]][9][1-9][[:space:]].." <filename>
+        egrep "^[[:digit:]]{6}[2468].+" <filename>
+Q13. i. sort -rk 2 <filename> | head -n 10
+Q13. ii.sort -k 2 <filename> | head -n 5 | sort -rk 2
+Q14.	cut -d ' ' -f 3 <filename> | sort -gk 1 | uniq -c
+Q14. a. egrep "Hinry|Ng" <filename> | cut -d "|" -f 3
+Q14. b. cut -d "|" -f 3 <filename> | sort -u | wc -l
+Q14. c. cut -d "|" -f 3 <filename> | egrep -i "^[a-z].+" | sort | uniq -c
+Q14. d. cut -d "|" -f 2 <filename> | sort | uniq -c | egrep "[2-9].+"

@@ -1,0 +1,871 @@
+
+===========CASE 41===========
+$  rm -rf .legit
+$  ./legit.pl rm
+legit.pl: error: no .legit directory containing legit repository exists
+$  ./legit.pl rm a
+legit.pl: error: no .legit directory containing legit repository exists
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  ./legit.pl rm a
+legit.pl: error: your repository does not have any commits yet
+$  echo line 1 > a
+$  ./legit.pl rm a
+legit.pl: error: your repository does not have any commits yet
+$  echo line 1 > b
+$  ./legit.pl add a b
+$  ./legit.pl rm a
+legit.pl: error: your repository does not have any commits yet
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm
+$  ./legit.pl rm a
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show 0:a
+line 1
+
+===========CASE 42===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+
+===========CASE 43===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm --cached a
+$  ./legit.pl add a
+
+===========CASE 44===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: 'a' not found in commit 1
+$  ./legit.pl show 1:b
+line 1b
+
+===========CASE 45===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a --cached
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: 'a' not found in commit 1
+$  ./legit.pl show 1:b
+line 1b
+
+===========CASE 46===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl rm a
+legit.pl: error: 'a' in repository is different to working file
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+
+===========CASE 47===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl rm --force a
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+
+===========CASE 48===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl rm --cached a
+$  ./legit.pl add a
+$  ./legit.pl show :a
+line 1a
+line 2a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+
+===========CASE 49===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl add a
+$  echo line 3a >> a
+$  ./legit.pl rm a
+legit.pl: error: 'a' in index is different to both working file and repository
+$  ./legit.pl add a
+$  ./legit.pl show :a
+line 1a
+line 2a
+line 3a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+
+===========CASE 50===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl add a
+$  echo line 3a >> a
+$  ./legit.pl rm --cached a
+legit.pl: error: 'a' in index is different to both working file and repository
+$  ./legit.pl add a
+$  ./legit.pl show :a
+line 1a
+line 2a
+line 3a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+
+===========CASE 51===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  ./legit.pl add a
+$  echo line 3a >> a
+$  ./legit.pl rm --force a
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+
+===========CASE 52===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm --force --cached a
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: 'a' not found in commit 1
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl add a
+
+===========CASE 53===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm --cached --force a
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: 'a' not found in commit 1
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl add a
+
+===========CASE 54===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm --force b --cached a
+usage: legit.pl rm [--force] [--cached] <filenames>
+$  echo line 2c >> c
+$  ./legit.pl commit -m "second commit"
+nothing to commit
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+line 1c
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:c
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+
+===========CASE 55===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2c >> c
+$  ./legit.pl add c
+$  ./legit.pl rm c
+legit.pl: error: 'c' has changes staged in the index
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+line 1c
+line 2c
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+line 1a
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl show 1:c
+line 1c
+line 2c
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+
+===========CASE 56===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2c >> c
+$  ./legit.pl add c
+$  ./legit.pl rm --cached c
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+line 1a
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl show 1:c
+legit.pl: error: 'c' not found in commit 1
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+
+===========CASE 57===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2c >> c
+$  ./legit.pl add c
+$  ./legit.pl rm --force c
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+line 1a
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl show 1:c
+legit.pl: error: 'c' not found in commit 1
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+legit.pl: error: can not open 'c'
+
+===========CASE 58===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a b --force --cached
+$  ./legit.pl commit -m "second commit"
+nothing to commit
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+$  ./legit.pl add b
+
+===========CASE 59===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a b --force --force --force --force
+$  ./legit.pl commit -m "second commit"
+nothing to commit
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+$  ./legit.pl add b
+legit.pl: error: can not open 'b'
+
+===========CASE 60===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a b --cached --force --cached --force
+$  ./legit.pl commit -m "second commit"
+nothing to commit
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+$  ./legit.pl add b
+
+===========CASE 61===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm a b --cached --cached --force --force
+$  ./legit.pl commit -m "second commit"
+nothing to commit
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+$  ./legit.pl add b
+
+===========CASE 62===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 1a > a
+$  rm b
+$  ./legit.pl rm a
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+legit.pl: error: unknown commit '1'
+$  ./legit.pl show 1:b
+legit.pl: error: unknown commit '1'
+$  ./legit.pl add a
+legit.pl: error: can not open 'a'
+
+===========CASE 63===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2c >> c
+$  ./legit.pl add c
+$  echo line 1c > c
+$  ./legit.pl rm c --cached
+legit.pl: error: 'c' in index is different to both working file and repository
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+line 1c
+line 2c
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+line 1a
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl show 1:c
+line 1c
+line 2c
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+
+===========CASE 64===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2c >> c
+$  ./legit.pl add c
+$  echo line 3c >> c
+$  ./legit.pl rm c 
+legit.pl: error: 'c' in index is different to both working file and repository
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :b
+line 1b
+$  ./legit.pl show :c
+line 1c
+line 2c
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 0:c
+line 1c
+$  ./legit.pl show 1:a
+line 1a
+$  ./legit.pl show 1:b
+line 1b
+$  ./legit.pl show 1:c
+line 1c
+line 2c
+$  ./legit.pl add a
+$  ./legit.pl add b
+$  ./legit.pl add c
+
+===========CASE 65===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm c
+$  echo line 2a >> a
+$  echo line 2b >> b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  echo line 1c > c
+$  ./legit.pl add c
+$  ./legit.pl show :a
+line 1a
+line 2a
+$  ./legit.pl show :b
+line 1b
+line 2b
+$  ./legit.pl rm a b
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+
+===========CASE 66===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  echo line 1c > c
+$  ./legit.pl add a b c
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm c
+$  echo line 2a >> a
+$  echo line 2b >> b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  echo line 1c > c
+$  ./legit.pl add c
+$  ./legit.pl show :a
+line 1a
+line 2a
+$  ./legit.pl show :c
+line 1c
+$  ./legit.pl rm a c
+legit.pl: error: 'c' has changes staged in the index
+$  ./legit.pl show :a
+line 1a
+line 2a
+$  ./legit.pl show :c
+line 1c
+
+===========CASE 67===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl add a b
+$  ./legit.pl rm a
+$  ./legit.pl show :a
+legit.pl: error: 'a' not found in index
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+
+===========CASE 68===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl add a b
+$  echo line 2b >> b
+$  ./legit.pl rm b
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+
+===========CASE 68===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl add a b
+$  echo line 2b >> b
+$  ./legit.pl rm --cached b
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+
+===========CASE 69===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  ./legit.pl rm --cached b
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+
+===========CASE 70===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2b >> b
+$  ./legit.pl rm --cached b
+$  ./legit.pl show :a
+line 1a
+$  ./legit.pl show :c
+legit.pl: error: 'c' not found in index
+
+===========CASE 71===========
+$  rm -rf .legit
+$  ./legit.pl init
+Initialized empty legit repository in .legit
+$  echo line 1a > a
+$  echo line 1b > b
+$  ./legit.pl add a b
+$  ./legit.pl commit -m "first commit"
+Committed as commit 0
+$  echo line 2a >> a
+$  echo line 2b >> b
+$  ./legit.pl add a b
+$  ./legit.pl rm --cached b
+$  echo line 3a >> a
+$  echo line 3b >> b
+$  ./legit.pl commit -m "second commit"
+Committed as commit 1
+$  ./legit.pl show :a
+line 1a
+line 2a
+$  ./legit.pl show :b
+legit.pl: error: 'b' not found in index
+$  ./legit.pl show 0:a
+line 1a
+$  ./legit.pl show 0:b
+line 1b
+$  ./legit.pl show 1:a
+line 1a
+line 2a
+$  ./legit.pl show 1:b
+legit.pl: error: 'b' not found in commit 1
