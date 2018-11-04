@@ -1,5 +1,4 @@
 # comp9041
-Everything Andrew Taylor
 Course Summary
 The following is a summary of the topics that will be covered in this course.
 Tools for software construction
