@@ -14,12 +14,12 @@ Correctness, clarity, reliability, efficiency, portability, ...
 The focus for the practical work will be Shell, Perl, Python and Javascript.  
 
 # Course Aims
-This course is designed for students who have mastered the basics of programming. It aims to broaden your knowledge of techniques and tools for software construction.
-Learning Outcomes
-By the end of the course, you should have these attributes which will be useful to you for the remainder of your studies and after graduation:
-have practical experience in programming with the Unix shell, Perl and Python
-have a broader & deeper knowledge of building software systems
-more appreciation of the use of specific technologies and strategies during software development
-exposure to tools for version control, performance improvement, configuration and debugging
-improvement of your ability to articulate & communicate concepts related to programming & systems
+This course is designed for students who have mastered the basics of programming. It aims to broaden your knowledge of techniques and tools for software construction.  
+# Learning Outcomes  
+By the end of the course, you should have these attributes which will be useful to you for the remainder of your studies and after graduation:  
+have practical experience in programming with the Unix shell, Perl and Python  
+have a broader & deeper knowledge of building software systems  
+more appreciation of the use of specific technologies and strategies during software development  
+exposure to tools for version control, performance improvement, configuration and debugging  
+improvement of your ability to articulate & communicate concepts related to programming & systems  
 
